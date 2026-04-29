@@ -276,8 +276,6 @@ export type Reference = {
   name: string;
   role: string;
   company: string;
-  phone: string;
-  email: string;
 };
 
 export const references: Reference[] = [
@@ -285,14 +283,10 @@ export const references: Reference[] = [
     name: "Dhamielyn A. Sarno MIT",
     role: "ProVA PH Coach",
     company: "ProVA PH",
-    phone: "+63 915 832 5769",
-    email: "dhamsarno@gmail.com",
   },
   {
     name: "Jeanette Hizole-Rey",
     role: "Kajea Bookkeeping Coach",
     company: "Kajea Bookkeeping",
-    phone: "+63 948 719 6309",
-    email: "admin@kajeaskeperskeeping.com",
   },
 ];

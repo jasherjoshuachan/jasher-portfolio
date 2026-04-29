@@ -497,10 +497,7 @@ export default function BentoGrid() {
                     <p className="font-semibold text-sm text-text">{ref.name}</p>
                     <p className="text-xs text-accent font-medium">{ref.role}</p>
                     <p className="text-xs text-text-muted mt-0.5">{ref.company}</p>
-                    <div className="mt-2 space-y-0.5">
-                      <p className="text-xs text-text-muted">{ref.phone}</p>
-                      <p className="text-xs text-text-muted break-all">{ref.email}</p>
-                    </div>
+                    <p className="text-xs text-text-muted mt-2 italic">Contact details available upon request</p>
                   </div>
                 ))}
               </div>
