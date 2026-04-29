@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Typecheck & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_N8N_RESUME_WEBHOOK: https://example.com/webhook/ci-placeholder
+
+      # TODO: re-enable lint once eslint-config-next 16+ resolves the
+      # FlatCompat circular-reference issue with @eslint/eslintrc 9.
+      # - name: Lint
+      #   run: npm run lint
