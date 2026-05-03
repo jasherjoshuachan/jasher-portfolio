@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
       "AI-assisted bookkeeping and client workflow support",
     ],
     tags: ["AI", "Automation", "Infrastructure", "Operations"],
-    stack: "OpenClaw · Python · Telegram Bot API · WhatsApp (Baileys) · Hetzner VPS · Linux",
+    stack: "OpenClaw · Python · Telegram Bot API · WhatsApp (Baileys) · Linux VPS",
     githubUrl: "https://github.com/jasherjoshuachan/claude-max-api-proxy",
   },
   {
@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
       "Clean separation: org intake number vs. personal comms",
     ],
     tags: ["WhatsApp API", "n8n", "Meta Cloud", "Automation"],
-    stack: "WhatsApp Cloud API · Meta Business Platform · n8n · Notion · Hetzner VPS",
+    stack: "WhatsApp Cloud API · Meta Business Platform · n8n · Notion · Linux VPS",
     githubUrl: "https://github.com/jasherjoshuachan/ths-whatsapp-intake",
   },
   {
@@ -253,8 +253,8 @@ export const timeline: TimelineItem[] = [
 ];
 
 export const stats = [
-  { value: "10+", label: "Years Experience", sub: "Business Operations" },
-  { value: "2", label: "Certifications", sub: "QBO ProAdvisor · Xero" },
+  { value: "10+", label: "Years Experience", sub: "Operations → Automation" },
+  { value: "6", label: "Agents in Production", sub: "OpenClaw · Running 24/7" },
   { value: "2", label: "Active Clients", sub: "International Retainers" },
 ];
 
