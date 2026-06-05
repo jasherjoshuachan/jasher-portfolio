@@ -14,7 +14,7 @@ const jsonLd = {
   url: "https://jasherchan.truehubsolutions.com",
   image: "https://jasherchan.truehubsolutions.com/jasher-avatar.png",
   email: "jasherchan@truehubsolutions.com",
-  telephone: "+63-998-972-8783",
+  telephone: "+63-991-916-4468",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bacolod City",

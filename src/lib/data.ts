@@ -5,7 +5,7 @@ export const person = {
   tagline: "Systems that think. Agents that act. Operations that scale.",
   bio: "AI Automation Engineer building production multi-agent systems and end-to-end workflow automation for international SMEs and AI-native agencies. I architect agent systems on Claude and OpenAI, orchestrate them through n8n and custom Python infrastructure, and ship operational platforms that replace 30+ hours of weekly manual ops with supervised automation. My edge: I'm an operator who learned to engineer the way out — a decade across hospitality operations in Singapore, multi-currency bookkeeping for international SMEs, and an AI agency I built from scratch. Certified QBO ProAdvisor and Xero Advisor — useful when your automation has to handle real money correctly. Open to senior remote roles and Founding Engineer positions at AI-native startups.",
   contact: {
-    phone: "+63 998 972 8783",
+    phone: "+63 991 916 4468",
     email: "jasherchan@truehubsolutions.com",
     location: "Bacolod City, Philippines",
     linkedin: "https://linkedin.com/in/jasherchan",

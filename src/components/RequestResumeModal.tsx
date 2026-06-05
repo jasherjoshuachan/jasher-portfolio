@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle, AlertCircle, FileText } from "lucide-react";
@@ -10,12 +10,6 @@ type Status = "idle" | "loading" | "success" | "error";
 export default function RequestResumeModal({ onClose }: { onClose: () => void }) {
   const [status, setStatus] = useState<Status>("idle");
   const [form, setForm] = useState({ name: "", company: "", email: "", role: "" });
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,7 +57,7 @@ export default function RequestResumeModal({ onClose }: { onClose: () => void })
     </div>
   );
 
-  if (!mounted) return null;
+  if (typeof document === "undefined") return null;
 
   return createPortal(
     <AnimatePresence>
