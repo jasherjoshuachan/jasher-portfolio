@@ -3,6 +3,7 @@ import AxeBuilder from "@axe-core/playwright";
 
 test("home page has no serious automated accessibility violations", async ({ page }) => {
   await page.goto("/", { waitUntil: "networkidle" });
+  await page.waitForTimeout(1200);
   const scan = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
     .analyze();
