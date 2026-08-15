@@ -29,6 +29,12 @@ jobs:
         env:
           NEXT_PUBLIC_N8N_RESUME_WEBHOOK: https://example.com/webhook/ci-placeholder
 
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Accessibility
+        run: npm run test:a11y
+
       # TODO: re-enable lint once eslint-config-next 16+ resolves the
       # FlatCompat circular-reference issue with @eslint/eslintrc 9.
       # - name: Lint
