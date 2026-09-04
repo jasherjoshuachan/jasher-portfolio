@@ -1,0 +1,15 @@
+{
+  "verified_at": "2026-09-04",
+  "components": [
+    {
+      "provider": "shadcn/ui",
+      "license": "MIT",
+      "retrieval": "npx shadcn@latest add button sheet accordion --yes",
+      "selected_component": "accordion",
+      "purpose": "Case-study evidence and limits disclosure",
+      "local_paths": ["src/components/ui/accordion.tsx", "src/lib/utils.ts"],
+      "dependencies": ["@base-ui/react", "clsx", "tailwind-merge"],
+      "ownership": "Local source copied into this repository"
+    }
+  ]
+}

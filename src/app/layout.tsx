@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -22,59 +21,29 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jasherchan.truehubsolutions.com"),
-
-  title: "Jasher Joshua Chan | AI Automation Engineer · n8n & Claude",
+  title: "Jasher Chan | AI Automation Engineer",
   description:
-    "AI Automation Engineer building production multi-agent systems and end-to-end workflow automation. n8n · Claude · OpenClaw. Operations engineered to run themselves.",
-
-  keywords: [
-    "AI Automation Engineer", "Workflow Automation", "n8n", "Claude AI", "Agent Systems",
-    "AI Agent Architecture", "Multi-Agent Systems", "Generative AI", "Workflow Engineer",
-    "Automation Engineer", "Business Process Automation", "Jasher Chan",
-    "Xero Advisor", "QuickBooks ProAdvisor",
-  ],
-
+    "AI Automation Engineer building agent systems with clear approval boundaries and proof of completion.",
   authors: [{ name: "Jasher Joshua A. Chan" }],
-
-  alternates: {
-    canonical: "https://jasherchan.truehubsolutions.com",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
-
   openGraph: {
-    title: "Jasher Joshua Chan | AI Automation Engineer · n8n & Claude",
+    title: "Jasher Chan | AI Automation Engineer",
     description:
-      "I build AI-powered systems that run themselves. n8n · Claude · OpenClaw · Agent Systems. Open to Work & Consulting.",
-    url: "https://jasherchan.truehubsolutions.com",
-    siteName: "Jasher Joshua A. Chan",
+      "Systems built around intent, approval, action, and receipt.",
+    siteName: "Jasher Chan",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jasher Joshua Chan — AI Automation Engineer · n8n · Claude · Agent Systems",
+        alt: "Jasher Chan, AI Automation Engineer",
       },
     ],
     type: "profile",
     locale: "en_PH",
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Jasher Joshua Chan | AI Automation Engineer · n8n & Claude",
-    description:
-      "I build AI-powered systems that run themselves. n8n · Claude · OpenClaw · Agent Systems. Open to Work & Consulting.",
-    images: ["/og-image.png"],
-  },
+  twitter: { card: "summary_large_image", images: ["/og-image.png"] },
 };
-
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 export default function RootLayout({
   children,
@@ -83,10 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen font-sans antialiased bg-bg text-text">
-        {children}
-      </body>
-      {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
+      <body>{children}</body>
     </html>
   );
 }

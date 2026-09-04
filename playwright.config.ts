@@ -13,8 +13,7 @@ export default defineConfig({
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-        command:
-          "NEXT_PUBLIC_N8N_RESUME_WEBHOOK=https://example.com/webhook/ci-placeholder npm run build && python3 -m http.server 3000 -d out",
+        command: "npm run build && python3 -m http.server 3000 -d out",
         url: "http://127.0.0.1:3000",
         reuseExistingServer: !process.env.CI,
       },
