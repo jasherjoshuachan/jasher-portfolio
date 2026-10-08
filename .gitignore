@@ -44,3 +44,5 @@ AGENTS.md
 # Tests / coverage
 coverage/
 .nyc_output/
+test-results/
+playwright-report/
