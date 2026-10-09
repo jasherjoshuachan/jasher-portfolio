@@ -4,7 +4,7 @@ Source for [jasherchan.truehubsolutions.com](https://jasherchan.truehubsolutions
 
 ## Stack
 
-- **Framework:** [Next.js 16.2.4](https://nextjs.org) (App Router, static export)
+- **Framework:** [Next.js 16.2.7](https://nextjs.org) (App Router, static export)
 - **UI:** React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lucide icons
 - **Hosting:** Cloudflare Pages (static)
 - **OG image generation:** Sharp (Node script — see [scripts/generate-og.js](scripts/generate-og.js))
@@ -54,9 +54,19 @@ jasher-portfolio/
 |---|---|
 | `npm run dev` | Local dev server with hot reload |
 | `npm run build` | Production static export → `./out` |
+| `npm run start` | Doesn't work here: `next start` refuses to run with `output: "export"`. Serve `./out` instead, e.g. `python3 -m http.server 3000 -d out` |
 | `npm run lint` | ESLint via [eslint-config-next](https://www.npmjs.com/package/eslint-config-next) |
 | `npm run typecheck` | `tsc --noEmit` — verifies the build will type-check |
 | `npm run generate:og` | Regenerate `public/og-image.png` from React markup |
+| `npm run test:a11y` | Playwright + axe scan of the home page (`tests/a11y.spec.ts`). Builds the site itself with a placeholder webhook (no `.env.local` needed) and serves `./out` on port 3000. Needs `python3` and a one-time `npx playwright install chromium` |
+| `npm run test:visual` | Compares a full-page screenshot against the approved baseline (`tests/visual.spec.ts`). Skipped unless `VISUAL_BASELINE_APPROVAL_ID` is set. No baseline exists yet, so run `test:visual:approve` first |
+| `npm run test:visual:approve` | Same spec with `--update-snapshots`: overwrites the baseline. Needs `VISUAL_BASELINE_APPROVAL_ID` set, otherwise the spec skips and writes nothing. Run it only after Jasher approves the new look |
+
+Environment variables for the Playwright scripts:
+
+- `PLAYWRIGHT_BASE_URL`: test an already-running site instead of building and serving `./out`.
+- `PLAYWRIGHT_CHANNEL`: use an installed browser channel (e.g. `chrome`) instead of the Playwright Chromium.
+- `VISUAL_BASELINE_APPROVAL_ID`: any non-empty value; turns on the visual spec.
 
 ## OG image regeneration
 
@@ -64,7 +74,7 @@ Run `npm run generate:og` after changing the headshot, headline, or palette. Aft
 
 ## CI
 
-GitHub Actions runs `typecheck` and `build` on every push and pull request. See [.github/workflows/ci.yml](.github/workflows/ci.yml).
+GitHub Actions runs `typecheck`, `build` and `test:a11y` on pushes and pull requests to `main`. The visual check is not in CI. See [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 **Known issue:** `npm run lint` currently fails to load the eslint config — a circular-reference error between `@eslint/eslintrc` 9 and `eslint-config-next` 16's `FlatCompat` shim. Lint is therefore disabled in CI, pending an upstream fix or a config rewrite that drops `FlatCompat` in favour of native flat config.
 
