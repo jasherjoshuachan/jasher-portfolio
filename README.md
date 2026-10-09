@@ -4,7 +4,7 @@ Source for [jasherchan.truehubsolutions.com](https://jasherchan.truehubsolutions
 
 ## Stack
 
-- **Framework:** [Next.js 16.2.4](https://nextjs.org) (App Router, static export)
+- **Framework:** [Next.js 16.2.7](https://nextjs.org) (App Router, static export)
 - **UI:** React 19, TypeScript, Tailwind CSS v4, Framer Motion, Lucide icons
 - **Hosting:** Cloudflare Pages (static)
 - **OG image generation:** Sharp (Node script — see [scripts/generate-og.js](scripts/generate-og.js))
