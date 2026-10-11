@@ -401,7 +401,7 @@ export default function BentoGrid() {
                   <div
                     key={i}
                     className={`flex gap-3 rounded-xl px-3 -mx-3 py-3 transition-colors duration-150 ${
-                      item.type === "early" ? "opacity-45" : "hover:bg-bg"
+                      item.type === "early" ? "" : "hover:bg-bg"
                     }`}
                   >
                     <div className="flex flex-col items-center pt-1">
@@ -420,7 +420,7 @@ export default function BentoGrid() {
                     <div className="flex-1">
                       <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
                         <div className="flex flex-wrap items-baseline gap-x-1.5">
-                          <span className="font-semibold text-sm text-text">{item.role}</span>
+                          <span className={`font-semibold text-sm ${item.type === "early" ? "text-text-muted" : "text-text"}`}>{item.role}</span>
                           <span className="text-text-muted text-sm">· {item.company}</span>
                         </div>
                         <div className="flex flex-wrap items-center gap-x-3 text-xs text-text-muted shrink-0">
