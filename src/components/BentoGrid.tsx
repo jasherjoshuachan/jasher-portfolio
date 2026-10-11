@@ -356,8 +356,8 @@ export default function BentoGrid() {
                   <h3 className="font-heading text-base text-text leading-snug mb-0.5">{cs.client}</h3>
                   <p className="text-xs text-text-muted mb-1">{cs.industry} · {cs.scope}</p>
                   {cs.stack && (
-                    <p className="text-[10px] text-text-muted/60 mb-3">
-                      <span className="font-semibold text-text-muted/80">Stack:</span> {cs.stack}
+                    <p className="text-[10px] text-text-muted mb-3">
+                      <span className="font-semibold text-text-muted">Stack:</span> {cs.stack}
                     </p>
                   )}
                   <p className="text-sm text-text-muted leading-relaxed mb-4">{cs.description}</p>
@@ -526,7 +526,7 @@ export default function BentoGrid() {
                     <MapPin className="w-3 h-3" />
                     {education.location}
                   </div>
-                  <p className="text-xs text-text-muted/70 mt-0.5">{education.period}</p>
+                  <p className="text-xs text-text-muted mt-0.5">{education.period}</p>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-border/40 space-y-2.5">
