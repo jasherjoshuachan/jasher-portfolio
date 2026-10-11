@@ -58,7 +58,7 @@ jasher-portfolio/
 | `npm run lint` | ESLint via [eslint-config-next](https://www.npmjs.com/package/eslint-config-next) |
 | `npm run typecheck` | `tsc --noEmit` — verifies the build will type-check |
 | `npm run generate:og` | Regenerate `public/og-image.png` from React markup |
-| `npm run test:a11y` | Playwright + axe scan of the home page (`tests/a11y.spec.ts`). Builds the site itself with a placeholder webhook (no `.env.local` needed) and serves `./out` on port 3000. Needs `python3` and a one-time `npx playwright install chromium` |
+| `npm run test:a11y` | Playwright + axe scan of the home page (`tests/a11y.spec.ts`). Outside CI it uses whatever is already serving on port 3000; otherwise it builds the site itself with a placeholder webhook (no `.env.local` needed) and serves `./out` there. Needs `python3` and a one-time `npx playwright install chromium` |
 | `npm run test:visual` | Compares a full-page screenshot against the approved baseline (`tests/visual.spec.ts`). Skipped unless `VISUAL_BASELINE_APPROVAL_ID` is set. No baseline exists yet, so run `test:visual:approve` first |
 | `npm run test:visual:approve` | Same spec with `--update-snapshots`: overwrites the baseline. Needs `VISUAL_BASELINE_APPROVAL_ID` set, otherwise the spec skips and writes nothing. Run it only after Jasher approves the new look |
 
