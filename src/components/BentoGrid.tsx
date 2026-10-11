@@ -356,8 +356,8 @@ export default function BentoGrid() {
                   <h3 className="font-heading text-base text-text leading-snug mb-0.5">{cs.client}</h3>
                   <p className="text-xs text-text-muted mb-1">{cs.industry} · {cs.scope}</p>
                   {cs.stack && (
-                    <p className="text-[10px] text-text-muted/60 mb-3">
-                      <span className="font-semibold text-text-muted/80">Stack:</span> {cs.stack}
+                    <p className="text-[10px] text-text-muted mb-3">
+                      <span className="font-semibold text-text-muted">Stack:</span> {cs.stack}
                     </p>
                   )}
                   <p className="text-sm text-text-muted leading-relaxed mb-4">{cs.description}</p>
@@ -401,7 +401,7 @@ export default function BentoGrid() {
                   <div
                     key={i}
                     className={`flex gap-3 rounded-xl px-3 -mx-3 py-3 transition-colors duration-150 ${
-                      item.type === "early" ? "opacity-45" : "hover:bg-bg"
+                      item.type === "early" ? "" : "hover:bg-bg"
                     }`}
                   >
                     <div className="flex flex-col items-center pt-1">
@@ -420,7 +420,7 @@ export default function BentoGrid() {
                     <div className="flex-1">
                       <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
                         <div className="flex flex-wrap items-baseline gap-x-1.5">
-                          <span className="font-semibold text-sm text-text">{item.role}</span>
+                          <span className={`font-semibold text-sm ${item.type === "early" ? "text-text-muted" : "text-text"}`}>{item.role}</span>
                           <span className="text-text-muted text-sm">· {item.company}</span>
                         </div>
                         <div className="flex flex-wrap items-center gap-x-3 text-xs text-text-muted shrink-0">
@@ -526,7 +526,7 @@ export default function BentoGrid() {
                     <MapPin className="w-3 h-3" />
                     {education.location}
                   </div>
-                  <p className="text-xs text-text-muted/70 mt-0.5">{education.period}</p>
+                  <p className="text-xs text-text-muted mt-0.5">{education.period}</p>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-border/40 space-y-2.5">
